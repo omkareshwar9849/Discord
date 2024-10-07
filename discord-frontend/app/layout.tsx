@@ -28,12 +28,12 @@ export default function RootLayout({
       <html lang="en" suppressHydrationWarning>
         <body className={cn(font.className, "bg-white dark:bg-[#313338]")}>
         {/* <body className={`${font.className}`}> */}
-          <SignedOut>
+          {/* <SignedOut>
             <SignInButton />
           </SignedOut> 
           <SignedIn>
             <UserButton />
-          </SignedIn>
+          </SignedIn> */}
           <ThemeProvider
             attribute="class"
             defaultTheme="dark"

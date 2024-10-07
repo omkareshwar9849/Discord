@@ -1,6 +1,7 @@
 import { db } from "@/lib/db";
 import { initialProfile } from "@/lib/initial-profile";
 import { redirect } from "next/navigation";
+import { InitialModel } from "@/components/models/initial-model";
 
 const SetupPage = async() =>{
     const profile = await initialProfile();
@@ -8,7 +9,7 @@ const SetupPage = async() =>{
         where:{
             members:{
                 some:{
-                    profileId: profile.id
+                    profileId: profile?.id
                 }
             }
         }
@@ -18,7 +19,7 @@ const SetupPage = async() =>{
         redirect(`/servers/${server.id}`);
     }
 
-    return <div>create a server</div>
+    return <InitialModel/>
 };
 
 export default SetupPage;
