@@ -1,11 +1,13 @@
 import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server'
 
 const isProtectedRoute = createRouteMatcher(['/', '/forum(.*)'])
+const publicRoutes = ['/api/uploadthing'];
 
 export default clerkMiddleware((auth, req) => {
+  const isPublicRoute = publicRoutes.some((route) => req.nextUrl.pathname.startsWith(route))
   if (isProtectedRoute(req)) auth().protect()
 })
-
+ 
 export const config = {
   matcher: [
     // Skip Next.js internals and all static files, unless found in search params
