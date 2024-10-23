@@ -60,6 +60,7 @@ export const InviteModel = () => {
                     </Label>
                     <div className="flex items-center mt-2 gap-x-2">
                         <Input 
+                         readOnly
                          disabled={loading}
                          className='bg-zinc-300/50 border-0 focus-visible:ring-0 focus-visible:ring-offset-0'
                          value={inviteUrl}
