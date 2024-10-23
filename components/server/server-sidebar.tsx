@@ -3,6 +3,7 @@ import { redirect } from "next/navigation";
 
 import { currentProfile } from "@/lib/current-profile";
 import { db } from "@/lib/db";
+import ServerHeader from "./server-header";
 
 interface ServerSidebarProps {
     serverId: string;
@@ -49,7 +50,7 @@ export const ServerSidebar = async ({ serverId }: ServerSidebarProps) => {
 
     return (
         <div className="flex felx-col h-full text-primary w-full dark:bg-[#2b2d31] bg-[#F2F3F5]">
-            ServerSidebar
+            <ServerHeader server={server} role={role}/>
         </div>
     )
 }
